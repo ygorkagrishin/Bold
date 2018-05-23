@@ -5,28 +5,9 @@ block content
         // Hero         
         section.sect.hero
             article.container
+
                 // Header
-                header
-                    .header__row
-                        .header__left
-                            h2.logo 
-                                a(href="javascript:void(0);") Bold.
-                        .header__right
-                            .header__search
-                                input(type="text", name="search", id="search")
-                                img(src="images/content/hero/glass.png", alt="glass pic")
-                    nav.nav
-                        ul.nav__list
-                            li  
-                                a(href="javascript:void(0);") Home
-                            li  
-                                a(href="javascript:void(0);") About
-                            li  
-                                a(href="javascript:void(0);") Blog
-                            li  
-                                a(href="javascript:void(0);") Portfolio
-                            li  
-                                a(href="javascript:void(0);") Contact
+                include ../modules/_header
                 // Header end
 
                 .hero__main
@@ -222,10 +203,5 @@ block content
                             button(type="submit").form__btn.btn__submit <span>Sign up</span>
                     // Footer col-3 end
 
-                footer.copy
-                    .copy__row
-                        .copy__col.copy__left
-                            | 2012 ThemeTrunk. All Rights Reserved. Powered by WordPress.
-                        .copy__col.copy__right
-                            | A ThemeTrunk Production  <span>/  BestPSDFreebies.com  /  YasTech.ca</span>
+                include ../modules/_footer
         // Section footer end
