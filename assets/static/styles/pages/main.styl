@@ -1,13 +1,21 @@
 .hero
-    height: 100vh
     background-color: primaryGrey
+.hero__main
+    display: table
+    height: 100vh
 .hero__title
+    display: table-cell
+    vertical-align: middle
     font: 100px / 120px mainTitle
     letter-spacing: -4px;
     word-spacing: 18px;
 
+
 .feat__row
     clearfix()
+    .feat__col
+        &:not(:last-child)
+            margin-right: 20px
 .feat__col
     float: left
     max-width: 300px
@@ -17,10 +25,9 @@
         height: 2px
         background-color: primaryBlack    
         content: ''
-    &:not(:last-child)
-        margin-right: 20px
 .feat__title
     margin-bottom: 14px
+
 
 
 .port__title
@@ -28,6 +35,9 @@
 .port__list
     padding: 2px 0 74px 0 
     clearfix()
+    .port__item
+        &:not(:last-child)
+            margin-right: 20px
 .port__item
     position: relative
     float: left
@@ -37,8 +47,6 @@
     overflow: hidden
     img 
         transform: translate(-25%, -25%)
-    &:not(:last-child)
-        margin-right: 20px
 .port__hover
     position: absolute
     top: 0
@@ -66,11 +74,15 @@
             display: table
 
 
+
 .posts__title
     borderTop()
 .posts__row
     clearfix()
-.posts__col
+    .posts__col
+        &:not(:last-child)
+            margin-right: 20px
+.posts__col 
     float: left
     max-width: 220px
     padding-bottom: 72px
@@ -85,15 +97,20 @@
             margin-top: 10px 
             background-color: primaryBlack    
             content: ''
-    &:not(:last-child)
-        margin-right: 20px
 .posts__cont
     margin-bottom: 20px
+.posts__more
+    font-family: fontBaseBold
+
+
 
 .footer__row
     padding: 36px 0
     border-top: 4px solid primaryBlack
     clearfix()
+    .footer__col
+        &:not(:last-child)
+            margin-right: 20px
 .footer__col
     float: left
     width: 300px
@@ -102,8 +119,6 @@
         font-size: 18px
         word-spacing: 1px
         text-transform: uppercase
-    &:not(:last-child)
-        margin-right: 20px
 .footer__social
     max-width 135px
     padding-top: 17px

@@ -2,14 +2,14 @@ extends ../layout/main
 
 block content
     main.page__main
+
+        // Header
+        include ../modules/_header
+        // Header end
+
         // Hero         
         section.sect.hero
             article.container
-
-                // Header
-                include ../modules/_header
-                // Header end
-
                 .hero__main
                     h1.hero__title 
                         | We Design to impress.
@@ -60,7 +60,7 @@ block content
 
                 ul.port__list
                     
-                    .port__item
+                    li.port__item
                         img(src="images/content/portfolio/dance.png", alt="port preview")
                         .port__hover
                             .port__desc
