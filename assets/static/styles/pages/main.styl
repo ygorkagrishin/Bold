@@ -5,47 +5,49 @@
     height: 100vh
 .hero__title
     display: table-cell
-    vertical-align: middle
-    font: 100px / 120px mainTitle
-    letter-spacing: -4px;
-    word-spacing: 18px;
+    vertical-align: middle  
+    font: 6.25em / 1.2em mainTitle //100px / 120px
+    letter-spacing: -.04em //-4px
+    word-spacing: .18em //18px
 
 
 .feat
-    padding: 15px 0
+    padding: .9375em 0 //15px 
 .feat__row
     clearfix()
     .feat__col
         &:not(:last-child)
-            margin-right: 20px
+            margin-right: 1.25em //20px
 .feat__col
     float: left
-    max-width: 300px
-    padding-bottom: 71px
+    max-width: 18.75em // 300px
+    padding-bottom: 4.5em // 72px
     &::before
         display: block
-        height: 2px
+        height: .125em // 2px
         background-color: primaryBlack    
         content: ''
+    @media screen and (max-width: 800px)
+        max-width: 16.75em
 .feat__title
-    margin-bottom: 14px
+    margin-bottom: .875em // 14px
 
 
 
 .port__title
     borderTop()
 .port__list
-    padding: 2px 0 74px 0 
+    padding: .125em 0 4.625em 0 // 2px 0 74px 0 
     clearfix()
     .port__item
         &:not(:last-child)
-            margin-right: 20px
+            margin-right: 1.25em //20px
 .port__item
     position: relative
     float: left
     width: 100%
-    max-width 220px
-    height: 176px
+    max-width 13.75em // 220px
+    height: 11em // 176px
     overflow: hidden
     img 
         transform: translate(-25%, -25%)
@@ -62,13 +64,13 @@
     vertical-align: middle
     text-align: center
     img 
-        width: 26px;
-        height: 26px;
-        vertical-align: bottom;
+        width: 1.625em //26px
+        height: 1.625em //26px
+        vertical-align: bottom
     .port__name
         display: inline-block
         margin: 0
-        font-size: 18px
+        font-size: 1.125em // 18px
         color: #fff
 .port__item
     &:hover,&.is-active
@@ -83,52 +85,52 @@
     clearfix()
     .posts__col
         &:not(:last-child)
-            margin-right: 20px
+            margin-right: 1.25em //20px
 .posts__col 
     float: left
-    max-width: 220px
-    padding-bottom: 72px
+    max-width 13.75em // 220px
+    padding-bottom: 4.5em // 72px
     h3
-        margin-bottom: 17px
-        font-size: 18px
-        line-height: 20px
+        margin-bottom: .94444444em //17px
+        font-size: 1.125em // 18px
+        line-height: 1.11111111em // 20px
         text-transform: uppercase
         &::after
             display: block
-            height: 2px
-            margin-top: 10px 
+            height: .11111111em // 2px
+            margin-top: .55555556em // 10px 
             background-color: primaryBlack    
             content: ''
 .posts__cont
-    margin-bottom: 20px
+    margin-bottom: 1.11111111em // 20px
 .posts__more
     font-family: fontBaseBold
 
 
 
 .footer__rows
-    padding-top: 36px
-    border-top: 4px solid primaryBlack 
+    padding-top: 2.25em // 36px
+    border-top: .25em solid primaryBlack // 4px
 .footer__row
     clearfix()
     .footer__col
         &:not(:last-child)
-            margin-right: 20px
+            margin-right: 1.25em //20px
 .footer__col
     float: left
-    max-width: 300px
-    padding-bottom: 36px
+    max-width: 18.75em // 300px
+    padding-bottom: 2.25em // 36px
     h3
-        margin-bottom: 16px
-        font-size: 18px
-        word-spacing: 1px
+        margin-bottom: .94444444em //17px
+        font-size: 1.125em // 18px
+        word-spacing: .05555556em // 1px
         text-transform: uppercase
 .footer__social
-    max-width 135px
-    padding-top: 17px
+    max-width 8.4375em // 135px
+    padding-top: 1.0625em // 17px
     li
         display: inline-block
-        width: 30px
+        width: 1.875em // 30px
         vertical-align: middle
     a
         display: inline-block

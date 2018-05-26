@@ -1,8 +1,12 @@
 *
     box-sizing: border-box
 
+html
+    @media screen and (max-width: 940px)
+        font-size: 14px
+
 .page
-    font: 16px / 20px fontBase
+    font: 1em / 1.25em fontBase // 16px / 20px
     color: baseFontColor
 
 .sect
@@ -10,13 +14,13 @@
 
 .container
     width: 98%
-    max-width: 940px;
+    max-width: 58.75em // 940px
     margin: 0 auto
 
 for $n in (1..6)
     h{$n}
         margin: 0
-        font: 100% / 1 fontSectTitle
+        font: 1em / 1 fontSectTitle
 
 ul,li
     padding: 0

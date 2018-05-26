@@ -2,7 +2,7 @@
     li
         position: relative
         display: inline-block
-        padding: 6px 0
+        padding: .375em 0 //6px
         vertical-align: middle
         &:hover
             &::before
@@ -10,17 +10,17 @@
                 top: 0
                 left: 0
                 width: 100%
-                height: 3px
+                height: .1875em //3px
                 background-color: primaryBlack 
                 content: ''
             a
                 color: #fff
         &:not(:last-child)
-            margin-right: 22px
+            margin-right: 1.375em //22px
 
     a
-        font: 24px / 1 fontSectTitle
+        font: 1.5em / 1 fontSectTitle // 24px
         text-transform: uppercase 
 .nav__list
-    border-top: 1px solid primaryBlack
-    border-bottom: 1px solid primaryBlack
+    border-top: .0625em solid primaryBlack // 1px
+    border-bottom: .0625em solid primaryBlack // 1px
