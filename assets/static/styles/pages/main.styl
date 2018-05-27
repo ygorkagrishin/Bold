@@ -11,7 +11,8 @@
     word-spacing: .18em //18px
     @media screen and (max-width: 800px)
         font-size: 5.25em
-
+    @media screen and (max-width: 480px)
+        font-size: 4.5em
 
 .feat
     padding: .9375em 0 //15px 
@@ -20,10 +21,15 @@
     .feat__col
         &:not(:last-child)
             margin-right: 1.25em //20px
+            @media screen and (max-width: 480px)
+                margin: 0
 .feat__col
     float: left
     max-width: 18.75em // 300px
     padding-bottom: 4.5em // 72px
+    h3
+        @media screen and (max-width: 480px)
+            max-width 70%
     &::before
         display: block
         height: .125em // 2px
@@ -31,6 +37,8 @@
         content: ''
     @media screen and (max-width: 800px)
         max-width: 16.75em
+    @media screen and (max-width: 480px)
+        max-width: 100%
 .feat__title
     margin-bottom: .875em // 14px
 
@@ -53,6 +61,8 @@
         &:nth-child(odd)
             @media screen and (max-width: 800px)
                 padding-right: 1em
+            @media screen and (max-width: 480px)
+                padding: 0
 .posts__col 
     float: left
     max-width 13.75em // 220px
@@ -72,10 +82,14 @@
         max-width: 50%
         padding-bottom: 0
         margin-bottom: 4.5em
+    @media screen and (max-width: 480px)
+        max-width: 100%
 .posts__cont
     margin-bottom: 1.11111111em // 20px
 .posts__more
     font-family: fontBaseBold
+    @media screen and (max-width: 480px)
+        font-size: 1.3em
 
 
 
@@ -103,6 +117,8 @@
         max-width: 50%
         padding-bottom: 0
         margin-bottom: 1.5em
+    @media screen and (max-width: 480px)
+        max-width: 100%
 .footer__social
     max-width 8.4375em // 135px
     padding-top: 1.0625em // 17px

@@ -1,10 +1,18 @@
 .form
     padding-top: .9375em // 15px
+    @media screen and (max-width: 480px)
+        padding-top: 1.9375em
+    @media screen and (max-width: 375px)
+        font-size: 1.25em
 .form__input
     width: 11.8125em // 189px
     padding: .3125em // 5px
     border: .0625em solid primaryBlack // 1px
     @media screen and (max-width: 800px)
         width: 35%
+    @media screen and (max-width: 480px)
+        width: 45%
+    @media screen and (max-width: 375px)
+        width: 55%
 .form__btn
     margin-left: .25em // 4px

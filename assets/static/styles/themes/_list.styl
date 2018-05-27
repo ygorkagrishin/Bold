@@ -17,10 +17,15 @@
         transform: translate(-25%, -25%)
         @media screen and (max-width: 800px)
             transform: translate(0,0)
+        @media screen and (max-width: 480px)
+            width 100%
     @media screen and (max-width: 800px)
         max-width 49%
         height: 17em
         margin: .5% !important
+    @media screen and (max-width: 480px)
+        max-width 100%
+        margin: 0 0 1% 0 !important
 .port__hover
     position: absolute
     top: 0
@@ -37,11 +42,13 @@
         width: 1.625em //26px
         height: 1.625em //26px
         vertical-align: bottom
-    .port__name
-        display: inline-block
-        margin: 0
-        font-size: 1.125em // 18px
-        color: #fff
+.port__name
+    display: inline-block
+    margin: 0
+    font-size: 1.125em // 18px
+    color: #fff
+    @media screen and (max-width: 480px)
+        font-size: 1.5em
 .port__item
     &:hover,&.is-active
         .port__hover
