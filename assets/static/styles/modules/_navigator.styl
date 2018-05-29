@@ -1,26 +1,55 @@
 .nav
+    border-top: .0625em solid primaryBlack // 1px
+    border-bottom: .0625em solid primaryBlack // 1px
+    
+.nav__wrap
+    overflow: hidden
+    transition: all .5s
+    @media screen and (max-width: 480px)
+        height: 0
+
+.nav__list
+    @media screen and (max-width: 480px)
+        // List padding-bottom = li padding 
+        padding: 1em 0 .375em 0
     li
         position: relative
         display: inline-block
         padding: .375em 0 //6px
-        vertical-align: middle
         &:hover
-            &::before
-                position: absolute
-                top: 0
-                left: 0
-                width: 100%
-                height: .1875em //3px
-                background-color: primaryBlack 
-                content: ''
+            @media screen and (min-width: 480px)
+                &::before
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: .1875em //3px
+                    background-color: primaryBlack 
+                    content: ''
             a
                 color: #fff
         &:not(:last-child)
             margin-right: 1.375em //22px
-
+            @media screen and (max-width: 480px)
+                margin: 0
+        @media screen and (max-width: 480px)
+            display: block
     a
+        display: inline-block
         font: 1.5em / 1 fontSectTitle // 24px
-        text-transform: uppercase 
-.nav__list
-    border-top: .0625em solid primaryBlack // 1px
-    border-bottom: .0625em solid primaryBlack // 1px
+        text-transform: uppercase
+
+.nav__open_type_mobile
+    @extend .nav__list a
+    padding: .375em 0
+    &.is-collapsed
+        display: none
+    @media screen and (min-width: 480px)
+        display: none !important
+.nav__close_type_mobile
+    @extend .nav__list a
+    padding: .375em 0
+    &.is-collapsed
+        display: none
+    @media screen and (min-width: 480px)
+        display: none !important
