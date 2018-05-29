@@ -127,7 +127,6 @@ gulp.task('libs:build:css', () => {
 
 gulp.task('libs:build:js', () => {
     return gulp.src(paths.libs.jquery)
-        .pipe(cleancss())
         .pipe(concat('all.libs.min.js'))
         .pipe(gulp.dest(paths.libs.dest));
 });
