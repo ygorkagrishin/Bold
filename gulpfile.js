@@ -59,8 +59,6 @@ const paths = {
     dir: 'public/'
 }
 
-const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development'
-
 gulp.task('clean', () => {
     return del(paths.dir);
 });
@@ -71,7 +69,7 @@ gulp.task('pug:build', () => {
             errorHandler: notify.onError()
         }))
         .pipe(pug({
-            pretty: gulpif(isDevelopment, true) 
+            pretty: true 
         }))
         .pipe(gulp.dest(paths.pug.dest));
 });
@@ -81,7 +79,7 @@ gulp.task('stylus:build', () => {
         .pipe(plumber({
             errorHandler: notify.onError()
         }))
-        .pipe(gulpif(isDevelopment, sourcemaps.init()))
+        .pipe(sourcemaps.init())
         .pipe(stylus({
             compress: true,
             'include css': true
@@ -92,7 +90,7 @@ gulp.task('stylus:build', () => {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulpif(isDevelopment, sourcemaps.write()))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.stylus.dest));
 });
 
@@ -101,13 +99,13 @@ gulp.task('js:build', () => {
         .pipe(plumber({
             errorHandler: notify.onError()
         }))
-        .pipe(gulpif(isDevelopment, sourcemaps.init()))
+        .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['env']
         }))
-        .pipe(gulpif(isDevelopment, uglify()))
+        .pipe(uglify())
         .pipe(concat('main.min.js'))
-        .pipe(gulpif(isDevelopment, sourcemaps.write()))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.js.dest));
 });
 
