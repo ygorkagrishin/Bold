@@ -46,6 +46,11 @@ const paths = {
         dest: 'public/fonts/',
         watch: 'assets/static/fonts/**/*'
     },
+    php: {
+        src: 'assets/static/*.php',
+        dest: 'public/',
+        watch: 'assets/static/*.php'
+    },
     libs: {
         normalize: 'node_modules/normalize.css/normalize.css',
         jquery: 'node_modules/jquery/dist/jquery.min.js',
@@ -118,6 +123,11 @@ gulp.task('fonts:build', () => {
         .pipe(gulp.dest(paths.fonts.dest));
 });
 
+gulp.task('php:build', () => {
+    return gulp.src(paths.php.src)
+        .pipe(gulp.dest(paths.php.dest));
+});
+
 gulp.task('libs:build:css', () => {
     return gulp.src(paths.libs.normalize)
         .pipe(cleancss())
@@ -137,6 +147,7 @@ gulp.task('watch', () => {
     gulp.watch(paths.js.watch, gulp.series('js:build'));
     gulp.watch(paths.img.watch, gulp.series('img:build'));
     gulp.watch(paths.fonts.watch, gulp.series('fonts:build'));
+    gulp.watch(paths.php.watch, gulp.series('php:build'));
 });
 
 gulp.task('serve', () => {
@@ -151,7 +162,7 @@ gulp.task('libs:build',
     gulp.series('libs:build:css', 'libs:build:js'));
 
 gulp.task('build', gulp.series(
-    'libs:build', 'fonts:build', 'img:build', 'pug:build', 'stylus:build', 'js:build' 
+    'libs:build', 'fonts:build', 'img:build', 'pug:build', 'stylus:build', 'js:build', 'php:build'
 ));
 
 gulp.task('default', 
