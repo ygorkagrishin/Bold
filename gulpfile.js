@@ -68,9 +68,7 @@ gulp.task('pug:build', () => {
         .pipe(plumber({
             errorHandler: notify.onError()
         }))
-        .pipe(pug({
-            pretty: true 
-        }))
+        .pipe(pug())
         .pipe(gulp.dest(paths.pug.dest));
 });
 
