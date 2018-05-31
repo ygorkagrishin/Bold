@@ -2,12 +2,12 @@
     border-top: .0625em solid primaryBlack // 1px
     border-bottom: .0625em solid primaryBlack // 1px
 .nav__wrap
-    @media screen and (max-width: 480px)
+    @media screen and (orientation: portrait) and (max-width: 480px)
         height: 0
         overflow: hidden
         transition: all .5s
 .nav__list
-    @media screen and (max-width: 480px)
+    @media screen and (orientation: portrait) and (max-width: 480px)
         padding: .5em 0
     li
         position: relative
@@ -15,7 +15,7 @@
         padding: .375em 0 //6px
         &:not(:last-child)
             margin-right: 1.375em //22px
-            @media screen and (max-width: 480px)
+            @media screen and (orientation: portrait) and (max-width: 480px)
                 margin: 0
         &:hover
             @media screen and (min-width: 480px)
@@ -29,8 +29,10 @@
                     content: ''
             a
                 color: #fff
-        @media screen and (max-width: 480px)
+        @media screen and (orientation: portrait) and (max-width: 480px)
             display: block
+        @media screen and (orientation: landscape) and (max-width: 700px)
+            padding: .7em 0
     a
         display: inline-block
         font: 1.5em / 1 fontSectTitle // 24px
