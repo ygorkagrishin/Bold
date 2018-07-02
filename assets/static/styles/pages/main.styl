@@ -10,7 +10,8 @@
     font: 6.25em / 1.2em mainTitle //100px / 120px
     letter-spacing: -.04em //-4px
     word-spacing: .18em //18px
-    @media screen and (max-width: 800px)
+    @media screen and (max-width: 800px),
+    (orientation landscape) and (max-width 840px)
         font-size: 5.25em
     @media screen and (max-width: 680px)
         font-size: 4.5em
@@ -140,12 +141,14 @@
     @media screen and (max-width: 480px)
         max-width: 100%
 .footer__social
-    max-width 8.4375em // 135px
+    max-width 10em // 135px
     padding-top: 1.0625em // 17px
     li
         display: inline-block
         width: 1.875em // 30px
         vertical-align: middle
+        &:not(:last-child)
+            margin-right .3em
     a
         display: inline-block
     img 

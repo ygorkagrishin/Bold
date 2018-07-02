@@ -1,24 +1,43 @@
 .nav
     border-top: .0625em solid primaryBlack // 1px
     border-bottom: .0625em solid primaryBlack // 1px
+    @media screen and (orientation portrait) and (max-width 768px),
+    (orientation landscape) and (max-width 840px)
+        border: none
+    &.active
+        .nav__wrap
+            @media screen and (orientation portrait) and (max-width 768px),
+            (orientation landscape) and (max-width 840px)
+                display table
 .nav__wrap
-    @media screen and (orientation: portrait) and (max-width: 480px)
-        height: 0
-        overflow: hidden
-        transition: all .5s
+    @media screen and (orientation portrait) and (max-width 768px),
+    (orientation landscape) and (max-width 840px)
+        position fixed
+        display none
+        top 0
+        left 0
+        z-index 9999
+        width 100%
+        height 100%
+        background-color primaryBlack
 .nav__list
-    @media screen and (orientation: portrait) and (max-width: 480px)
-        padding: .5em 0
+    @media screen and (orientation portrait) and (max-width 768px),
+    (orientation landscape) and (max-width 840px)
+        display table-cell
+        vertical-align middle
     li
         position: relative
         display: inline-block
         padding: .375em 0 //6px
         &:not(:last-child)
             margin-right: 1.375em //22px
-            @media screen and (orientation: portrait) and (max-width: 480px)
-                margin: 0
+            @media screen and (orientation portrait) and (max-width 768px)
+                margin: 0 0 3em 0
+            @media screen and (orientation portrait) and (max-width 480px),
+            (orientation landscape) and (max-width 840px)
+                margin: 0 0 1.375em 0
         &:hover
-            @media screen and (min-width: 480px)
+            @media screen and (min-width 768px)
                 &::before
                     position: absolute
                     top: 0
@@ -29,14 +48,17 @@
                     content: ''
             a
                 color: #fff
-        @media screen and (orientation: portrait) and (max-width: 480px)
-            display: block
-        @media screen and (orientation: landscape) and (max-width: 700px)
-            padding: .7em 0
+        @media screen and (orientation: portrait) and (max-width: 768px),
+        (orientation landscape) and (max-width 840px)
+            display block
+            text-align center
     a
         display: inline-block
         font: 1.5em / 1 fontSectTitle // 24px
         text-transform: uppercase
+        @media screen and (orientation portrait) and (max-width 768px),
+        (orientation landscape) and (max-width 840px)
+            color #fff
 .nav__open_type_mobile
     @extend .nav__list a
     padding: .375em 0

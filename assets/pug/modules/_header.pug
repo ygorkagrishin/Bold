@@ -1,11 +1,14 @@
 header
     article.container
         .header__row
-            .header__left
+            .header__logo
                 h2.logo 
                     a(href="javascript:void(0);") Bold.
-            .header__right
-                .header__search
-                    input(type="text", name="search", id="search")
-                    img(src="images/content/hero/glass.png", alt="glass pic")
+            .header__search
+                input(type="text", name="search", id="search")
+                img(src="images/content/hero/glass.png", alt="glass pic")
+            button(type="button").btn__menu.btn__menu_type_open
+                span
+                span
+                span
         include ../modules/_navigator

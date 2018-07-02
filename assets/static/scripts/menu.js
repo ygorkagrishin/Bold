@@ -1,67 +1,84 @@
-(() => {
+var Hamburger = function () {
+    var self = this;
 
-const nav = document.querySelector('.nav');
-const wrap = document.querySelector('.nav__wrap');
-const menu = document.querySelector('.nav__list');
-const links = menu.getElementsByTagName('a');
+    self.sel = {
+        btn: document.querySelector('.btn__menu'),
+        menu: document.querySelector('.nav')
+    }
 
-const content = document.querySelector('.hero__main');
+    self.defaults = {
+        state_active: 'active',
+        btn_state_active: 'btn__menu_state_active',
+        body_state_active: 'js-menu-active'
+    }
+}
 
-const open = document.querySelector('.nav__open');
-const close = document.querySelector('.nav__close');
+var hamburger = new Hamburger();
 
-const navOffsetHeight = nav.offsetHeight;
-const menuOffsetHeight = menu.offsetHeight;
+Hamburger.prototype.destroy = function () {
+    if (document.body.classList.contains(hamburger.defaults.body_state_active)) {
+        document.body.classList.remove(hamburger.defaults.body_state_active);
+    }
 
-let switchButtons = () => {
-    if (!open.classList.contains('is-collapsed')) {
-        open.classList.add('is-collapsed');
+    if (hamburger.sel.menu.classList.contains(hamburger.defaults.state_active) &&
+    hamburger.sel.btn.classList.contains(hamburger.defaults.btn_state_active)) {
+        hamburger.sel.menu.classList.remove(hamburger.defaults.state_active);
+        hamburger.sel.btn.classList.remove(hamburger.defaults.btn_state_active);
+    }
+
+    hamburger.sel.menu.removeEventListener('touchmove', hamburger.touchDevaiceCollapse);
+}
+
+Hamburger.prototype.bodyCollapse = function () {
+    if (!document.body.classList.contains(hamburger.defaults.body_state_active)) {
+        document.body.classList.add(hamburger.defaults.body_state_active);
     }
     else {
-        open.classList.remove('is-collapsed');
+        document.body.classList.remove(hamburger.defaults.body_state_active);
     }
+}
 
-    if (close.classList.contains('is-collapsed')) {
-        close.classList.remove('is-collapsed');
-    }
+Hamburger.prototype.touchDevaiceCollapse = function (e) {
+    e.preventDefault();
+}
+
+Hamburger.prototype.open = function () {
+    hamburger.bodyCollapse();
+
+    hamburger.sel.menu.classList.add(hamburger.defaults.state_active);
+    hamburger.sel.btn.classList.add(hamburger.defaults.btn_state_active);
+
+    hamburger.sel.menu.addEventListener('touchmove', hamburger.touchDevaiceCollapse);
+}
+
+Hamburger.prototype.close = function () {
+    hamburger.bodyCollapse();
+
+    hamburger.sel.menu.classList.remove(hamburger.defaults.state_active);
+    hamburger.sel.btn.classList.remove(hamburger.defaults.btn_state_active);
+
+    hamburger.sel.menu.removeEventListener('touchmove', hamburger.touchDevaiceCollapse);
+}
+
+Hamburger.prototype.handler = function (e) {
+    e.preventDefault();
+
+    if (hamburger.sel.menu.classList.contains(hamburger.defaults.state_active) &&
+    hamburger.sel.btn.classList.contains(hamburger.defaults.btn_state_active)) {
+        hamburger.close();  
+    }   
     else {
-        close.classList.add('is-collapsed');
+        hamburger.open();
     }
 }
 
-let openMenu = (e) => {
-    e.preventDefault();
-
-    if (!nav.classList.contains('is-active')) {
-        nav.classList.add('is-active');
-    }
-
-    switchButtons();
-
-    wrap.style.height = `${menuOffsetHeight}px`;
-    content.style.transform = 
-        'translate(0px, '+`${menuOffsetHeight - navOffsetHeight}px`+')';
+Hamburger.prototype.menu = function (e) {
+    if (e.target.tagName.toLowerCase() === 'a') { hamburger.destroy(); }
 }
 
-open.addEventListener('click', openMenu);
-
-let closeMenu = (e) => {
-    e.preventDefault();
-
-    if (nav.classList.contains('is-active')) {
-        nav.classList.remove('is-active');
-    }
-
-    switchButtons();
-
-    wrap.removeAttribute('style');
-    content.style.transform = 'translate(0px, 0px)';
+Hamburger.prototype.init = function () {
+    hamburger.sel.btn.addEventListener('click', hamburger.handler);
+    hamburger.sel.menu.addEventListener('click', hamburger.menu);
 }
 
-close.addEventListener('click', closeMenu);
-
-for (let i=0, len=links.length-1; i<=len; i++) {
-    let link = links[i]; link.addEventListener('click', closeMenu);
-}
-
-})();
+hamburger.init();
