@@ -12,7 +12,7 @@
     word-spacing: .18em //18px
     @media screen and (max-width: 800px)
         font-size: 5.25em
-    @media screen and (max-width: 480px)
+    @media screen and (max-width: 680px)
         font-size: 4.5em
 
 .feat
@@ -21,21 +21,20 @@
     clearfix()
     .feat__col
         &:not(:last-child)
-            margin-right: 1.25em //20px
-            @media screen and (max-width: 480px)
-                margin: 0
+            padding-right: 1.25em //20px
             @media screen and (orientation: landscape) and (max-width: 736px)
-                margin-right: 2%
+                padding-right: 2%
             @media screen and (orientation: landscape) and (max-width: 600px)
-                margin-right: 3%
-            @media screen and (orientation: landscape) and (max-width: 480px)
-                margin-right: 0
+                padding-right: 3%
+            @media screen and (orientation portrait) and (max-width 680px),
+            (orientation: landscape) and (max-width: 480px)
+                padding-right: 0
 .feat__col
     float: left
-    max-width: 18.75em // 300px
-    padding-bottom: 4.5em // 72px
+    max-width: (100%/3) // 300px
+    margin-bottom: 4.5em // 72px
     h3
-        @media screen and (max-width: 480px)
+        @media screen and (max-width: 680px)
             max-width 70%
         @media screen and (orientation: landscape) and (max-width: 480px)
             max-width: 50%
@@ -44,9 +43,7 @@
         height: .125em // 2px
         background-color: primaryBlack    
         content: ''
-    @media screen and (max-width: 800px)
-        max-width: 16.75em
-    @media screen and (max-width: 480px)
+    @media screen and (max-width: 680px)
         max-width: 100%
     @media screen and (orientation: landscape) and (max-width: 736px)
         width: 32%
